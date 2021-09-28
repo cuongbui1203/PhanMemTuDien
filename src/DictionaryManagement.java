@@ -148,7 +148,7 @@ public class DictionaryManagement {
 
     /**
      * Export dictionary to file
-     * @throws IOException
+     * @throws IOException loi file
      */
     public void dictionaryExportToFile() throws IOException {
         CreateFile.createFile(dictionary.getWords());
