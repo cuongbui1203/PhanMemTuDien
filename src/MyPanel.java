@@ -4,7 +4,10 @@ import java.awt.*;
 public class MyPanel extends JPanel {
     UIDictionary ui = null;
     MyPanel() {
+<<<<<<< HEAD
 //        ui = new UIDictionary(this.);
+=======
+>>>>>>> ff26dd43beb216434404a6747082139d05aecf5f
         this.setPreferredSize(new Dimension(700, 700));
     }
 
