@@ -4,9 +4,8 @@
 public class Word {
     public String word_target;
     public String word_explain;
+
     public Word(){
-        word_explain ="";
-        word_target  = "";
     }
     public Word(String word_target,String word_explain){
         this.word_target = word_target;

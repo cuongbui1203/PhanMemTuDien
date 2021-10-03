@@ -26,11 +26,7 @@ public class DatabaseController {
 
     public static void main(String[] args) {
         DatabaseController databaseController = new DatabaseController();
-        databaseController.removeWord("a");
-        ArrayList<Word> arr = databaseController.getDictionariesFromDatabase();
-        for (Word w : arr) {
-            System.out.println(w.word_target + " " + w.word_explain);
-        }
+        databaseController.close();
     }
 
     /**
@@ -150,8 +146,5 @@ public class DatabaseController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-    public boolean isConnect(){
-        return dbconect.
     }
 }
