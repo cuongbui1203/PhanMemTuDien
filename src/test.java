@@ -9,7 +9,6 @@ public class test {
 //        dictionaryCommandline.dictionarySearcher(sc);
 //        dictionaryCommandline.dictionarySearcher(sc);
 //        sc.close();
-        DictionaryApplication dictionaryApplication = new DictionaryApplication();
-        dictionaryApplication.runApplication();
+
     }
 }

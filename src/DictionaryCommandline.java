@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * thao tac voi tu dien bang commandline
+ * thao tac voi tu dien bang commandline.
  */
 public class DictionaryCommandline {
     DictionaryManagement dictionaryManagement;
@@ -12,10 +12,11 @@ public class DictionaryCommandline {
         this.dictionaryManagement = new DictionaryManagement();
     }
 
-    /**
-     * tu dien don gian
-     * @param sc Scanner truyen vao
-     * @throws FileNotFoundException xay ra khi loi doc file
+    /**<h1>
+     * tu dien don gian.
+     *</h1>
+     * @param sc Scanner truyen vao.
+     * @throws FileNotFoundException xay ra khi loi doc file.
      */
     public void dictionaryBasic(Scanner sc) throws FileNotFoundException {
         dictionaryManagement.addDictionaryCommandline(sc);
@@ -24,9 +25,10 @@ public class DictionaryCommandline {
     }
 
     /**
-     * tu dien nang cao
-     * @param sc Scanner dc truyen vao
-     * @throws IOException xay ra khi loi doc file
+     * tu dien nang cao.
+     *
+     * @param sc Scanner dc truyen vao.
+     * @throws IOException xay ra khi loi doc file.
      */
     public void dictionaryAdvanced(Scanner sc) throws IOException {
         dictionaryManagement.insertFromFile();
@@ -39,6 +41,7 @@ public class DictionaryCommandline {
 
     /**
      * kiem tra xem co bao nhieu tu co chua tu nhap vao
+     *
      * @param sc Scanner dc truyen vao
      */
     public void dictionarySearcher(Scanner sc) {
@@ -47,7 +50,7 @@ public class DictionaryCommandline {
         System.out.print("cac tu tim dc:");
         for (int i = 0; i < dictionaryManagement.dictionary.numOfWord(); i++) {
             if (dictionaryManagement.dictionary.getWord(i).word_target.contains(w)) {
-                System.out.print(dictionaryManagement.dictionary.getWord(i).word_target +", ");
+                System.out.print(dictionaryManagement.dictionary.getWord(i).word_target + ", ");
             }
         }
     }

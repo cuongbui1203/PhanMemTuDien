@@ -10,21 +10,24 @@ import java.util.Scanner;
  */
 public class DictionaryManagement {
     private final String url;
-    Dictionary dictionary;
     private final CreateFile createFile;
+    Dictionary dictionary;
+    DatabaseController dbController;
 
     /**
      * default constructor
      */
     DictionaryManagement() {
+        url = ".\\src\\dictionaries.txt";
         dictionary = new Dictionary();
         createFile = new CreateFile();
+        dbController = new DatabaseController();
 //        CreateFile.createFile1(CreateFile.getWordFromFile());
-        url = "E:\\!!!hoc_tap\\lap_Trinh\\java\\PMtudien\\src\\dictionaries.txt";
     }
 
     /**
      * tim tu
+     *
      * @param word tu can tim
      * @return vi tri neu tim dc k thi -1
      */
@@ -37,9 +40,9 @@ public class DictionaryManagement {
         return -1;
     }
 
-    /**
+    /**<p>
      * Hien thi toan bo tu dien theo dang
-     *
+     * </p>
      * No | English   |Vietnamese
      */
     public void showAllWord() {
@@ -53,6 +56,7 @@ public class DictionaryManagement {
 
     /**
      * them tu vao tu dien tu commandline
+     *
      * @param sc Scaner truyen vao
      */
     public void insertFromCommandline(Scanner sc) {
@@ -70,6 +74,7 @@ public class DictionaryManagement {
 
     /**
      * them tu vao tu dien tu file
+     *
      * @throws FileNotFoundException k doc dc file
      */
     public void insertFromFile() throws FileNotFoundException {
@@ -95,8 +100,8 @@ public class DictionaryManagement {
     }
 
     /**
-     * @param word tuw can tim
-     * @return position or k tim thay
+     * @param word tu can tim.
+     * @return position or k tim thay.
      */
     public String dictionaryLockup(String word) {
         int tg = lookup(word);
@@ -105,6 +110,7 @@ public class DictionaryManagement {
 
     /**
      * xoa word khoi tu dien
+     *
      * @param word tu can xoa
      */
     public void deleteWord(String word) {
@@ -118,6 +124,7 @@ public class DictionaryManagement {
 
     /**
      * them tu vao tu dien tu commandline
+     *
      * @param sc Scanner truyen vao
      */
     public void addDictionaryCommandline(Scanner sc) {
@@ -128,8 +135,9 @@ public class DictionaryManagement {
     }
 
     /**
-     * Repair word form commandline
-     * @param sc
+     * Repair word form commandline.
+     *
+     * @param sc Scanner.
      */
     public void repairDictionaryCommandline(Scanner sc) {
         System.out.println("tu ban muon sua:");
@@ -147,18 +155,19 @@ public class DictionaryManagement {
     }
 
     /**
-     * Export dictionary to file
-     * @throws IOException loi file
+     * Export dictionary to file.
+     *
+     * @throws IOException loi file.
      */
     public void dictionaryExportToFile() throws IOException {
         CreateFile.createFile(dictionary.getWords());
     }
 
     /**
-     *  class
-     *  create
-     *  read
-     *  write file
+     * <p>class</p>
+     * <p>create</p>
+     * <p>read</p>
+     * <p>write file</p>
      */
     private class CreateFile {
         private static String urlFileInput;
@@ -174,6 +183,7 @@ public class DictionaryManagement {
 
         /**
          * lay word tu file
+         *
          * @return mang chuwa cac tu va nghia
          * @throws FileNotFoundException k tim dc file
          */
@@ -192,10 +202,11 @@ public class DictionaryManagement {
 
         /**
          * tao file voi mang dc truyen vao
+         *
          * @param a mang luu cac word
          * @throws IOException loi doc ghi
          */
-        public static void createFile1(ArrayList<String> a) throws IOException {
+        private static void createFile1(ArrayList<String> a) throws IOException {
             FileWriter fileWriter;
             fileWriter = new FileWriter(urlFileOutput);
 
@@ -208,6 +219,7 @@ public class DictionaryManagement {
 
         /**
          * ghi ra file
+         *
          * @param a mang truyen vao
          * @throws IOException loi ghi file
          */
@@ -221,4 +233,5 @@ public class DictionaryManagement {
         }
 
     }
+
 }
